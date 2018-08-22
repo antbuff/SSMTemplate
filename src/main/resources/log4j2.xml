@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="WARN">
+    <Appenders>
+        <Console name="Console" target="SYSTEM_OUT">
+            <PatternLayout pattern="%d{HH:mm:ss.SSS} [%t] %-5level %n HIT: %l %n MSG: %msg%n"/>
+            <!--<PatternLayout pattern="%5p [%t] - %m%n"/>-->
+        </Console>
+
+    </Appenders>
+<!--TRACE < DEBUG < INFO < WARN < ERROR < FATAL-->
+    <Loggers>
+        <Root level="warn">
+            <AppenderRef ref="Console"/>
+        </Root>
+        <Logger name="com.antbuff.ssmtemplate.mapper" level="TRACE" additivity="false">
+            <AppenderRef ref="Console"/>
+        </Logger>
+        <Logger name="org.springframework.web.servlet.mvc.method" level="TRACE">
+            <AppenderRef ref="Console"/>
+        </Logger>
+    </Loggers>
+</Configuration>
